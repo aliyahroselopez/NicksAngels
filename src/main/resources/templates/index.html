@@ -7,22 +7,233 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-<main>
-   <section class="py-11 bg-light-gradient border-bottom border-white border-5">
-      <div class="bg-holder overlay overlay-light" img src="photo.jpg; background-size:cover;">
+<!-- Header-->
+<header class="bg-dark py-5">
+   <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+         <h1 class="display-4 fw-bolder">Parsells</h1>
+         <p class="lead fw-normal text-white-50 mb-0">We provide a wide selection of pre-owned and new clothes from several well-known brands.</p>
       </div>
-      <div class="container">
-         <div class="row flex-center">
-            <div class="col-12 mb-10">
-               <div class="d-flex align-items-center flex-column">
-                  <h1 class="fw-normal"> With an outstanding style, only for you</h1>
-                  <h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">Exclusively designed for you</h1>
+   </div>
+</header>
+<!-- Section-->
+<section class="py-5">
+   <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/426179/sub/goods_426179_sub14.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Pants</h5>
+                     <!-- Product price-->
+                     ₱1,599
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Sale badge-->
+               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/452872/item/goods_13_452872.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Crew Neck Short Sleeve Cropped T-Shirt</h5>
+                     <!-- Product reviews-->
+                     <div class="d-flex justify-content-center small text-warning mb-2">
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                     </div>
+                     <!-- Product price-->
+                     <span class="text-muted text-decoration-line-through">₱499</span>
+                     ₱299
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Sale badge-->
+               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450232/item/goods_01_450232.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Canvas Sneakers</h5>
+                     <!-- Product price-->
+                     <span class="text-muted text-decoration-line-through">$1,499</span>
+                     ₱999
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/452425/item/goods_32_452425.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Regular Collar Polo Shirt</h5>
+                     <!-- Product reviews-->
+                     <div class="d-flex justify-content-center small text-warning mb-2">
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                     </div>
+                     <!-- Product price-->
+                     ₱599
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Sale badge-->
+               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/445089/item/goods_57_445089.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">2-Strap Belt Sandals</h5>
+                     <!-- Product price-->
+                     <span class="text-muted text-decoration-line-through">₱1,499</span>
+                     ₱999
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/453376/item/goods_09_453376.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Nylon Body Bag</h5>
+                     <!-- Product price-->
+                     ₱699
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Sale badge-->
+               <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/ph/imagesgoods/447647/item/phgoods_64_447647.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Ultra Stretch Skinny Jeans (Damage)</h5>
+                     <!-- Product reviews-->
+                     <div class="d-flex justify-content-center small text-warning mb-2">
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                     </div>
+                     <!-- Product price-->
+                     <span class="text-muted text-decoration-line-through">₱1,999</span>
+                     ₱1,499
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
+               </div>
+            </div>
+         </div>
+         <div class="col mb-5">
+            <div class="card h-100">
+               <!-- Product image-->
+               <img class="card-img-top" src="https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/445289/item/goods_63_445289.jpg?width=1600&impolicy=quality_75" alt="..." />
+               <!-- Product details-->
+               <div class="card-body p-4">
+                  <div class="text-center">
+                     <!-- Product name-->
+                     <h5 class="fw-bolder">Skinny Fit Tapered Ankle Jeans</h5>
+                     <!-- Product reviews-->
+                     <div class="d-flex justify-content-center small text-warning mb-2">
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                        <div class="bi-star-fill"></div>
+                     </div>
+                     <!-- Product price-->
+                     ₱1,999
+                  </div>
+               </div>
+               <!-- Product actions-->
+               <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Add to Cart</a></div>
+                  <div class="text-center"><a class="btn btn-outline-primary mt-auto" href="#">Buy</a></div>
                </div>
             </div>
          </div>
       </div>
-   </section>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+   <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Parsell 2022</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
 </body>
 </html>

@@ -7,31 +7,39 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+    <div class="text-center text-white">
+      <h1 class="display-4 fw-bolder">Welcome to Parsells</h1>
+      <p class="lead fw-normal text-white-50 mb-0">You're just a few steps away from shopping at the best store in town!</p>
+    </div>
+  </div>
+</header>
 <main>
   <div class="container">
-    <h1 class="mt-5">Register</h1>
+    <h1 class="mt-5"></h1>
     <form th:method="POST" th:action="@{~/user}" th:object="${user}">
       <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="Juan">
+        <input type="text" class="form-control" id="firstName" placeholder="Juan">
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName" th:field="*{lastName}" placeholder="Dela Cruz">
+        <input type="text" class="form-control" id="lastName"  placeholder="Dela Cruz">
       </div>
       <div class="mb-3">
         <label for="firstName" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" th:field="*{username}" placeholder="Juan123">
+        <input type="text" class="form-control" id="username"  placeholder="Juan123">
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" th:field="*{password}" placeholder="Enter your Password">
+        <input type="password" class="form-control" id="password"  placeholder="Enter your Password">
       </div>
       <div class="mb-3">
         <label for="emailAddress" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="emailAddress" th:field="*{emailAddress}" placeholder="example@parsells.com">
+        <input type="email" class="form-control" id="emailAddress"  placeholder="example@parsells.com">
       </div>
-      <button type="submit" class="btn btn-outline-success">Register</button>
+      <button type="submit" class="btn btn-outline-primary">Register</button>
     </form>
   </div>
 </main>

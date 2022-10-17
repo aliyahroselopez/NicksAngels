@@ -7,29 +7,35 @@
 </head>
 <body>
     <header th:fragment="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white btn-primary">
+            <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" th:href="@{~/}" style="max-width: 30px;">
                     <img src="icon.png" class="img-fluid">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{~/}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{~/register}">Sell in Parsells</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{~/register}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" th:href="@{~/register}">Login</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{~/}">Home</a>
+                        <li class="nav-item"><a class="nav-link" th:href="@{~/sell}">Sell in Parsells</a>
+                        <li class="nav-item"><a class="nav-link" th:href="@{~/register}">Register</a>
+                        <li class="nav-item"><a class="nav-link" th:href="@{~/login}">Login</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" th:href="@{~/}">All Products</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item"th:href="@{~/}">Popular Items</a></li>
+                                <li><a class="dropdown-item" th:href="@{~/}">New Arrivals</a></li>
+                            </ul>
                         </li>
                     </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Cart
+                            <span class="badge bg-primary text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>
