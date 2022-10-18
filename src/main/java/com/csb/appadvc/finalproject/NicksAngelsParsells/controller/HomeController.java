@@ -1,9 +1,6 @@
 package com.csb.appadvc.finalproject.NicksAngelsParsells.controller;
 
-import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.UserDTO;
-import com.csb.appadvc.finalproject.NicksAngelsParsells.model.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -30,4 +27,24 @@ public class HomeController {
     public String login(){
         return "login";
     }
+    @GetMapping("/admin")
+    public String admin(){
+        return "admin/index";
+    }
+    @GetMapping("/edit-products")
+    public String editproducts(){
+        return "admin/edit-products";
+    }
+    @GetMapping("/add-products")
+    public String addproducts(){
+        return "admin/add-products";
+    }
+
+    @GetMapping("/view-products")
+    public String viewproducts(){
+        return "admin/view-products";
+    }
+
 }
+
+

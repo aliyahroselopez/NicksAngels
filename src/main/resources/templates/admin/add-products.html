@@ -6,12 +6,12 @@
   <title>Add a Product</title>
 </head>
 <body>
-<div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/headerADMIN :: header"></div>
 <header class="bg-dark py-5">
   <div class="container px-4 px-lg-5 my-5">
     <div class="text-center text-white">
-      <h1 class="display-4 fw-bolder">Add your Product</h1>
-      <p class="lead fw-normal text-white-50 mb-0">Ever thought about trying to sell your used or unused product? We can assist you!</p>
+      <h1 class="display-4 fw-bolder">Welcome, Admin!</h1>
+      <p class="lead fw-normal text-white-50 mb-0">Add a Product Category</p>
     </div>
   </div>
 </header>
@@ -20,16 +20,12 @@
     <h1 class="mt-5"></h1>
     <form th:method="POST" th:action="@{~/sell}" th:object="${sell}">
       <div class="mb-3">
-        <label for="productName" class="form-label">Product Name</label>
-        <input type="text" class="form-control" id="productName" placeholder="Pants">
+        <label for="productType" class="form-label">Product Type</label>
+        <input type="text" class="form-control" id="productType" placeholder="Shirts">
       </div>
       <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input type="number" class="form-control" id="price" placeholder="₱1599">
-      </div>
-      <div class="mb-3">
-        <label for="quantity" class="form-label">Quantity</label>
-        <input type="number" class="form-control" id="quantity" placeholder="20">
+        <label for="status" class="form-label">Status</label>
+        <input type="text" class="form-control" id="status" placeholder="Active">
       </div>
       <button type="submit" class="btn btn-outline-primary">Add Product</button>
     </form>
