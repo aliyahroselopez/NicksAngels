@@ -21,13 +21,13 @@
     <form th:method="POST" th:action="@{~/login}" th:object="${login}">
       <div class="mb-3">
         <label for="Username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="Username" placeholder="juan123">
+        <input type="text" class="form-control" id="Username" placeholder="juan123" th:field="*{username}">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+        <input type="password" class="form-control" id="password" placeholder="Enter your Password" th:field="*{password}">
       </div>
-      <button type="submit" class="btn btn-outline-primary">Login</button>
+        <button type="submit" class="btn btn-outline-primary">Login</button>
     </form>
   </div>
 </main>

@@ -1,9 +1,5 @@
 package com.csb.appadvc.finalproject.NicksAngelsParsells.model;
-
 import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.UserDTO;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,14 +32,6 @@ public class User {
 
     @Column(nullable = false)
     private String emailAddress;
-
-    @Column(updatable = false)
-    @CreationTimestamp
-    private LocalDateTime dateCreated;
-
-    @Column
-    @UpdateTimestamp
-    private LocalDateTime dateUpdated;
 
     public User() {}
 
@@ -82,14 +70,6 @@ public class User {
 
     public String getEmailAddress() {
         return emailAddress;
-    }
-
-    public LocalDateTime getDateCreated() {
-        return dateCreated;
-    }
-
-    public LocalDateTime getDateUpdated() {
-        return dateUpdated;
     }
 
 }
