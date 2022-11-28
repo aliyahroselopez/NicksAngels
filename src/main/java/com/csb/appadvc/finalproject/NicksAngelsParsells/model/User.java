@@ -1,14 +1,12 @@
 package com.csb.appadvc.finalproject.NicksAngelsParsells.model;
+
 import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.UserDTO;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -25,7 +23,7 @@ public class User {
     private String lastName;
 
     @Column(nullable = false)
-    private String username;
+    private String userName;
 
     @Column(nullable = false)
     private String password;
@@ -43,7 +41,7 @@ public class User {
         this.id = userDTO.getId();
         this.firstName = userDTO.getFirstName();
         this.lastName = userDTO.getLastName();
-        this.username = userDTO.getUsername();
+        this.userName = userDTO.getUserName();
         this.password = userDTO.getPassword();
         this.emailAddress = userDTO.getEmailAddress();
     }
@@ -60,8 +58,8 @@ public class User {
         return lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {

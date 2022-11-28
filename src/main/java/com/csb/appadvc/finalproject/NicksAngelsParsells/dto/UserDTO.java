@@ -2,11 +2,6 @@ package com.csb.appadvc.finalproject.NicksAngelsParsells.dto;
 
 import com.csb.appadvc.finalproject.NicksAngelsParsells.model.User;
 
-import java.util.Collections;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class UserDTO {
 
@@ -16,7 +11,7 @@ public class UserDTO {
 
     private String lastName;
 
-    private String username;
+    private String userName;
 
     private String password;
 
@@ -24,11 +19,11 @@ public class UserDTO {
 
     public UserDTO() {}
 
-    public UserDTO(Long id, String firstName, String lastName, String username, String password, String emailAddress) {
+    public UserDTO(Long id, String firstName, String lastName, String userName, String password, String emailAddress) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
         this.emailAddress = emailAddress;
     }
@@ -37,14 +32,12 @@ public class UserDTO {
         this.id = user.getId();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
-        this.username = user.getUsername();
+        this.userName = user.getUserName();
         this.password = user.getPassword();
         this.emailAddress = user.getEmailAddress();
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
 
     public void setId(Long id) {
         this.id = id;
@@ -66,9 +59,9 @@ public class UserDTO {
         this.lastName = lastName;
     }
 
-    public String getUsername() {return username;}
+    public String getUserName() {return userName;}
 
-    public void setUsername(String username) {this.username = username;}
+    public void setUsername(String username) {this.userName = username;}
 
     public String getPassword() {
         return password;

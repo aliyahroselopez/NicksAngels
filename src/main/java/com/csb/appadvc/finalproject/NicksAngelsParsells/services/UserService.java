@@ -4,7 +4,7 @@ import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.UserDTO;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserService{
 
     List<UserDTO> list();
 
@@ -13,9 +13,7 @@ public interface UserService {
     UserDTO get(Long id);
 
     void update(UserDTO updatedUser);
-
     void delete(Long id);
 
-    userDTO validateUser(String userName, string password);
 
 }

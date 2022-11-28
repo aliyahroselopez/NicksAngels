@@ -20,7 +20,7 @@ public class HomeController {
 
     @GetMapping("/register")
     public String register(){
-        return "register";
+        return "register/index";
     }
 
     @GetMapping("/login")
