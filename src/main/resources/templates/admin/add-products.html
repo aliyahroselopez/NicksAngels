@@ -11,23 +11,43 @@
   <div class="container px-4 px-lg-5 my-5">
     <div class="text-center text-white">
       <h1 class="display-4 fw-bolder">Welcome, Admin!</h1>
-      <p class="lead fw-normal text-white-50 mb-0">Add a Product Category</p>
+      <p class="lead fw-normal text-white-50 mb-0">Add a Product</p>
     </div>
   </div>
 </header>
 <main>
   <div class="container">
-    <h1 class="mt-5"></h1>
-    <form th:method="POST" th:action="@{~/sell}" th:object="${sell}">
-      <div class="mb-3">
-        <label for="productType" class="form-label">Product Type</label>
-        <input type="text" class="form-control" id="productType" placeholder="Shirts">
+    <h1 class="mt-5">Add Product</h1>
+    <form th:method="POST" th:action="@{~/product}" th:object="${product}">
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <ul>
+          <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+        </ul>
       </div>
       <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <input type="text" class="form-control" id="status" placeholder="Active">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="">
       </div>
-      <button type="submit" class="btn btn-outline-primary">Add Product</button>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea rows="4" cols="50" class="form-control" id="description" th:field="*{description}" placeholder=""></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="barcode" class="form-label">Barcode</label>
+        <input type="text" class="form-control" id="barcode" th:field="*{barcode}" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" th:field="*{quantity}" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">₱</span>
+          <input type="number" class="form-control" id="price" th:field="*{price}" placeholder="">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Create Product</button>
     </form>
   </div>
 </main>

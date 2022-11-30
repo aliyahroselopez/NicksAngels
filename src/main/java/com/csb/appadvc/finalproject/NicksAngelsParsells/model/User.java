@@ -1,17 +1,16 @@
 package com.csb.appadvc.finalproject.NicksAngelsParsells.model;
 
 import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.UserDTO;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
-@Table(name = "parsells")
+@Table(name = "user")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,14 +21,23 @@ public class User {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false)
-    private String userName;
-
-    @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String emailAddress;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
+
+    @Column(nullable = false)
+    private String passwordHash;
+
+    @Column(updatable = false)
+    @CreationTimestamp
+    private LocalDateTime dateCreated;
+
+    @Column
+    @UpdateTimestamp
+    private LocalDateTime dateUpdated;
 
     public User() {}
 
@@ -41,8 +49,6 @@ public class User {
         this.id = userDTO.getId();
         this.firstName = userDTO.getFirstName();
         this.lastName = userDTO.getLastName();
-        this.userName = userDTO.getUserName();
-        this.password = userDTO.getPassword();
         this.emailAddress = userDTO.getEmailAddress();
     }
 
@@ -58,16 +64,33 @@ public class User {
         return lastName;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
     public String getEmailAddress() {
         return emailAddress;
+    }
+
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
+    }
+
+    public LocalDateTime getDateUpdated() {
+        return dateUpdated;
     }
 
 }

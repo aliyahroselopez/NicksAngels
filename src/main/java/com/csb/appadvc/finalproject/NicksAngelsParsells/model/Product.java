@@ -1,12 +1,12 @@
 package com.csb.appadvc.finalproject.NicksAngelsParsells.model;
+
 import com.csb.appadvc.finalproject.NicksAngelsParsells.dto.ProductDTO;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -31,6 +31,13 @@ public class Product {
     @Column(nullable = false)
     private Long price;
 
+    @Column(updatable = false)
+    @CreationTimestamp
+    private LocalDateTime dateCreated;
+
+    @Column
+    @UpdateTimestamp
+    private LocalDateTime dateUpdated;
 
     public Product() {
     }
@@ -39,6 +46,7 @@ public class Product {
         this.id = productDTO.getId();
         this.name = productDTO.getName();
         this.description = productDTO.getDescription();
+        this.barcode = productDTO.getBarcode();
         this.quantity = productDTO.getQuantity();
         this.price = productDTO.getPrice();
     }
@@ -67,6 +75,13 @@ public class Product {
         this.description = description;
     }
 
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
 
     public Long getQuantity() {
         return quantity;
@@ -84,4 +99,19 @@ public class Product {
         this.price = price;
     }
 
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(LocalDateTime dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+
+    public LocalDateTime getDateUpdated() {
+        return dateUpdated;
+    }
+
+    public void setDateUpdated(LocalDateTime dateUpdated) {
+        this.dateUpdated = dateUpdated;
+    }
 }

@@ -10,49 +10,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = {"/registered"})
+@RequestMapping("/register")
 public class RegistrationController {
 
-    private static final String CUSTOMER_ROLE = "ROLE_CUSTOMER";
+    private static final String ADMIN_ROLE = "ROLE_ADMIN";
 
     @Autowired
-    private UserService UserService;
+    private UserService userService;
 
     @GetMapping
-    private String list(Model model) {
+    private String index(Model model) {
         model.addAttribute("user", new UserDTO());
-        return "login";
-    }
-
-    @GetMapping("/add")
-    private String getUserRegisterForm(Model model) {
-        model.addAttribute("user", new UserDTO());
-        return "login";
+        return "register";
     }
 
     @PostMapping
-    private String register(UserDTO user, Model model) {
-        UserService.add(user);
-        return list(model);
-    }
-
-    @GetMapping("/{id}")
-    private String getUser(@PathVariable Long id, Model model) {
-        model.addAttribute("user", UserService.get(id));
+    private String register(UserDTO userDTO, Model model) {
+        userDTO.setRole(ADMIN_ROLE);
+        userService.add(userDTO);
         return "login";
     }
-
-    @PutMapping
-    private String updateUser(UserDTO user, Model model) {
-        UserService.update(user);
-        return list(model);
-    }
-
-    @DeleteMapping
-    private String deleteUser(UserDTO user, Model model) {
-        UserService.delete(user.getId());
-        return list(model);
-    }
-
 
 }

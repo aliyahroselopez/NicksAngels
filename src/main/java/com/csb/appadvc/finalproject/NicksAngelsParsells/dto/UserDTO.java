@@ -2,6 +2,10 @@ package com.csb.appadvc.finalproject.NicksAngelsParsells.dto;
 
 import com.csb.appadvc.finalproject.NicksAngelsParsells.model.User;
 
+import java.util.Collections;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class UserDTO {
 
@@ -11,33 +15,35 @@ public class UserDTO {
 
     private String lastName;
 
-    private String userName;
+    private String emailAddress;
 
     private String password;
 
-    private String emailAddress;
+    private String role;
+
+
 
     public UserDTO() {}
 
-    public UserDTO(Long id, String firstName, String lastName, String userName, String password, String emailAddress) {
+    public UserDTO(Long id, String firstName, String lastName, String emailAddress, String role, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
         this.emailAddress = emailAddress;
+        this.role = role;
+        this.password = password;
     }
 
     public UserDTO(User user) {
         this.id = user.getId();
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
-        this.userName = user.getUserName();
-        this.password = user.getPassword();
         this.emailAddress = user.getEmailAddress();
-    }
+        this.role = user.getRole().getName();}
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -59,16 +65,6 @@ public class UserDTO {
         this.lastName = lastName;
     }
 
-    public String getUserName() {return userName;}
-
-    public void setUsername(String username) {this.userName = username;}
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {this.password = password;}
-
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -77,6 +73,21 @@ public class UserDTO {
         this.emailAddress = emailAddress;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 
 }

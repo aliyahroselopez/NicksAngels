@@ -18,26 +18,22 @@
 <main>
   <div class="container">
     <h1 class="mt-5"></h1>
-    <form th:method="POST" th:action="@{~/registered}" th:object="${user}">
+    <form th:method="POST" th:action="@{~/register}" th:object="${user}">
       <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="John" >
+        <input type="text" class="form-control" th:field="*{firstName}" id="firstName" placeholder="John" >
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName"  placeholder="Reyes">
-      </div>
-      <div class="mb-3">
-        <label for="userName" class="form-label">Username</label>
-        <input type="text" class="form-control" id="userName"  placeholder="Jr123">
+        <input type="text" class="form-control" th:field="*{lastName}" id="lastName"  placeholder="Reyes">
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password"  placeholder="Enter your Password">
+        <input type="password" class="form-control" th:field="*{password}" id="password"  placeholder="Enter your Password">
       </div>
       <div class="mb-3">
         <label for="emailAddress" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="emailAddress"  placeholder="example@parsells.com">
+        <input type="email" class="form-control" th:field="*{emailAddress}" id="emailAddress"  placeholder="example@parsells.com">
       </div>
       <button type="submit" class="btn btn-outline-primary">Register</button>
     </form>

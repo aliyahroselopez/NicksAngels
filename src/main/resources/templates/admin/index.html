@@ -15,7 +15,42 @@
       <p class="lead fw-normal text-white-50 mb-0">Welcome, Admin!</p>
     </div>
   </div>
+
 </header>
+<main>
+  <div class="container">
+    <h1 class="mt-5">Product List</h1>
+    <a type="button" class="btn btn-outline-primary" th:href="@{~/product/add}">Add Product</a>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+
+      <tbody>
+      <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.description}"></td>
+        <td th:text="${product.quantity}"></td>
+        <td th:text="|₱ ${product.price}|"></td>
+        <td>
+          <form class="mt-1" th:method="delete" th:action="@{~/product}">
+            <input type="hidden" name="id" th:value="${product.id}">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </td>
+        <td>
+          <a href class="btn btn-primary" th:href="@{~/product/{id}(id=${product.id})}">View</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
 <!-- Footer-->
 <footer class="py-5 bg-dark">
   <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Parsells 2022</p></div>

@@ -10,15 +10,19 @@ public class ProductDTO {
 
     private Long id;
 
+    @NotBlank(message = "Name is required")
+    private String name;
+
+    @NotBlank(message = "Description is required")
+    private String description;
+
     private String barcode;
 
     @PositiveOrZero(message = "Quantity must not be a negative number")
     private long quantity;
-    @PositiveOrZero(message = "Price mus    t not be a negative number")
+
+    @PositiveOrZero(message = "Price must not be a negative number")
     private long price;
-    @NotBlank(message = "Name is required")
-    private String name;
-    private String description;
 
     public ProductDTO() {
     }
@@ -27,6 +31,7 @@ public class ProductDTO {
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
+        this.barcode = product.getBarcode();
         this.quantity = product.getQuantity();
         this.price = product.getPrice();
     }
@@ -55,6 +60,14 @@ public class ProductDTO {
         this.description = description;
     }
 
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
+    }
+
     public Long getQuantity() {
         return quantity;
     }
@@ -71,3 +84,4 @@ public class ProductDTO {
         this.price = price;
     }
 }
+

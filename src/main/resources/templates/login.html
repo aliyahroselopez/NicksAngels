@@ -17,17 +17,17 @@
 </header>
 <main>
   <div class="container">
-    <h1 class="mt-5"></h1>
+    <h1 class="mt-5" >Login</h1>
     <form th:method="POST" th:action="@{~/login}" th:object="${user}">
       <div class="mb-3">
-        <label for="Username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="Username" placeholder="juan123">
+        <label for="emailAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="emailAddress" th:field="*{emailAddress}">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter your Password">
+        <input type="password" class="form-control" id="password" th:field="*{password}">
       </div>
-        <button type="submit" class="btn btn-outline-primary">Login</button>
+      <button type="submit" class="btn btn-outline-primary">Login</button>
     </form>
   </div>
 </main>
