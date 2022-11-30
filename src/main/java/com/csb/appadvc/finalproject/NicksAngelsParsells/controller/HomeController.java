@@ -18,10 +18,8 @@ public class HomeController {
         return "sell";
     }
 
-//    @GetMapping("/register")
-//    public String register(){
-//        return "register";
-//    }
+    @GetMapping("/register")
+    public String register(){ return "register";}
 
     @GetMapping("/login")
     public String login(){

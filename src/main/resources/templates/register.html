@@ -18,18 +18,18 @@
 <main>
   <div class="container">
     <h1 class="mt-5"></h1>
-    <form th:method="POST" th:action="@{~/user}" th:object="${user}">
+    <form th:method="POST" th:action="@{~/registered}" th:object="${user}">
       <div class="mb-3">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Juan">
+        <input type="text" class="form-control" id="firstName" placeholder="John" >
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lastName"  placeholder="Dela Cruz">
+        <input type="text" class="form-control" id="lastName"  placeholder="Reyes">
       </div>
       <div class="mb-3">
         <label for="userName" class="form-label">Username</label>
-        <input type="text" class="form-control" id="userName"  placeholder="Juan123">
+        <input type="text" class="form-control" id="userName"  placeholder="Jr123">
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Password</label>

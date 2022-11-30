@@ -18,14 +18,14 @@
 <main>
   <div class="container">
     <h1 class="mt-5"></h1>
-    <form th:method="POST" th:action="@{~/login}" th:object="${login}">
+    <form th:method="POST" th:action="@{~/login}" th:object="${user}">
       <div class="mb-3">
         <label for="Username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="Username" placeholder="juan123" th:field="*{username}">
+        <input type="text" class="form-control" id="Username" placeholder="juan123">
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Enter your Password" th:field="*{password}">
+        <input type="password" class="form-control" id="password" placeholder="Enter your Password">
       </div>
         <button type="submit" class="btn btn-outline-primary">Login</button>
     </form>

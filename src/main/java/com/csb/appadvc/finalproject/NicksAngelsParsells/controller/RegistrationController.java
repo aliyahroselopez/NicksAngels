@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(value = {"/register"}, method = RequestMethod.POST)
+@RequestMapping(value = {"/registered"})
 public class RegistrationController {
 
     private static final String CUSTOMER_ROLE = "ROLE_CUSTOMER";
@@ -21,13 +21,13 @@ public class RegistrationController {
     @GetMapping
     private String list(Model model) {
         model.addAttribute("user", new UserDTO());
-        return "register";
+        return "login";
     }
 
     @GetMapping("/add")
     private String getUserRegisterForm(Model model) {
         model.addAttribute("user", new UserDTO());
-        return "login/index";
+        return "login";
     }
 
     @PostMapping
@@ -39,7 +39,7 @@ public class RegistrationController {
     @GetMapping("/{id}")
     private String getUser(@PathVariable Long id, Model model) {
         model.addAttribute("user", UserService.get(id));
-        return "login/index";
+        return "login";
     }
 
     @PutMapping
